@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Novo separador",
+  "Type": "App",
+  "Id": "wwC0D1APtEqr7zHr1c0hgg",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/wwC0D1APtEqr7zHr1c0hgg",
+  "Created": "2025-08-23T00:10:45.4403199Z",
+  "Updated": "2025-08-23T00:10:45.4403199Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.10.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
