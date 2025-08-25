@@ -126,6 +126,9 @@
       <x:String>UiPath.CV</x:String>
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -247,14 +250,13 @@
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="eu quero entrar em um site tirar print, e armazenar na memória em base64" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="755,1557" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="eu quero entrar em um site tirar print, e armazenar na memória em base64" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1269,21475" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:Image" Name="youtube_image" />
-      <Variable x:TypeArguments="ui:Image" Name="image" />
+      <Variable x:TypeArguments="ui:Image" Name="print" />
       <Variable x:TypeArguments="x:String" Name="base64String" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -263,7 +265,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,1337" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio OPS" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
       <uix:NApplicationCard.AutoGenerationOptions>
         <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
           <uix:GenerationOptions.ExpectedOutputs>
@@ -278,35 +280,80 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1087" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To URL - youtube.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.youtube.com/" Version="V5" />
-            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'page tab'" sap:VirtualizedContainerService.HintSize="436,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-              <ui:WaitUiElementAppear.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6e8167d4-ef80-495e-ac27-8bb9a2d1cf07" InformativeScreenshot="ed5a1c186401884f2a989d4034b9b695" Selector="&lt;webctrl id='chips' tag='IRON-SELECTOR' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:WaitUiElementAppear.Target>
-            </ui:WaitUiElementAppear>
-            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_2" OutImage="[youtube_image]" SaveScreenshotTo="Image" Version="V5" />
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OPS'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_38" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="XrxiOPt8DEi2jNtFO4G88Q" CvTextArea="1542, 266, 27, 13" CvTextArgument="OPS" CvType="Text" DesignTimeRectangle="1514, 254, 240, 36" FullSelectorArgument="&lt;webctrl aria-role='listitem' tag='DIV' /&gt;" Guid="e89141f5-5313-4f36-a9dc-00b2533a7760" InformativeScreenshot="7e57c5c1ac55c6804715ce70f5763b17.png" Reference="DaH5UF44uUOps46qi3sY1A/isLqjtk4PUS9rXYSbCFg7Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 266, 27, 13" CvTextArgument="OPS" CvType="Text" DesignTimeRectangle="1543, 263, 186, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='OPS' tag='DIV' type='' class='themeableElement textLabel trimmedTextWithEllipsis' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='OPS' /&gt;" Guid="85c9d73e-0cd3-4f10-9938-e1c2c06a581c" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_2" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
             <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(youtube_image.ByteArray)]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
               </Assign.Value>
             </Assign>
-            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://localhost:8080/message/sendMedia/teste" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;120363317351449626&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;ESSA É UMA MENSAGEM DE TESTE ENVIADA PELO *UiPath*, utilizando a API de whatsapp Evolution, essa imagem foi convertida de base64 para png &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392236724&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
               <uwah:NetHttpRequest.TimeoutInMiliseconds>
                 <InArgument x:TypeArguments="s:Nullable(x:Int32)">
                   <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
@@ -319,7 +366,895 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="504,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Mensagem enviada com sucesso&quot;]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Comercial" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Comercial'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_40" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="zJAKsNasy0i7P_IsgJTdHQ" CvTextArea="1541, 302, 63, 13" CvTextArgument="Comercial" CvType="Text" DesignTimeRectangle="1543, 299, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Comercial' tag='DIV' /&gt;" Guid="96ecdb16-612a-4853-909a-bf450dad8a52" InformativeScreenshot="a3d0ab13f20ef7641ac1b722a09a4229.png" Reference="DaH5UF44uUOps46qi3sY1A/mPy71eT_5kGE1wvP7Zc2Uw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1541, 302, 63, 13" CvTextArgument="Comercial" CvType="Text" DesignTimeRectangle="1514, 290, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Comercial' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Comercial' /&gt;" Guid="b8a5ce65-904d-47ef-8bc8-5ec2958a99a3" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_3" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392788169&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Financeiro" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,3503" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,3222" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Financeiro'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="RBLvwvZUXEqH1JBqAHE1ew" CvTextArea="1542, 338, 64, 12" CvTextArgument="Financeiro" CvType="Text" DesignTimeRectangle="1514, 326, 240, 36" FullSelectorArgument="&lt;webctrl aria-label='Financeiro' aria-role='listitem' tag='DIV' /&gt;" Guid="630ae8ca-7d51-4f5a-b2d6-2ba6f5bf97df" InformativeScreenshot="871fa9f42a5932692e05904d986fda7f.png" Reference="DaH5UF44uUOps46qi3sY1A/ZGcadDrHwEiz9fJWHTyXXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 338, 64, 12" CvTextArgument="Financeiro" CvType="Text" DesignTimeRectangle="1543, 335, 186, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Financeiro' tag='DIV' type='' class='themeableElement textLabel trimmedTextWithEllipsis' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Financeiro' /&gt;" Guid="2817cd30-16ac-4cda-8acb-7cfea751aa2b" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_4" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,439" sap2010:WorkflowViewState.IdRef="NetHttpRequest_3" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392129322&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,439" sap2010:WorkflowViewState.IdRef="NetHttpRequest_10" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392772812&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,439" sap2010:WorkflowViewState.IdRef="NetHttpRequest_11" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392581346&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_12" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392414331&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Produtos" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_5" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Produtos'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_41" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="Gclz4Zr2pkGSXoEEV8tpUQ" CvTextArea="1542, 374, 57, 13" CvTextArgument="Produtos" CvType="Text" DesignTimeRectangle="1543, 371, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Produtos' tag='DIV' /&gt;" Guid="784793fc-ae29-4426-b1fe-d707041ed47b" InformativeScreenshot="5f88242c42de651f50ad8efe4a13e9be.png" Reference="DaH5UF44uUOps46qi3sY1A/B2i05Er_cUig8HNCm2WZAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 374, 57, 13" CvTextArgument="Produtos" CvType="Text" DesignTimeRectangle="1514, 362, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Produtos' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Produtos' /&gt;" Guid="9c43aba7-3b71-43c1-95e8-591b1af97ed3" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_5" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_4" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556399514371&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Marketing" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_6" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Marketing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_42" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="IfrtQnT5xk-h9nRpTddBNQ" CvTextArea="1542, 410, 64, 16" CvTextArgument="Marketing" CvType="Text" DesignTimeRectangle="1543, 407, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Marketing' tag='DIV' /&gt;" Guid="d6bf1bba-0d55-4a0e-850e-4a8caa7ec554" InformativeScreenshot="1814c339bc17b52239819685378565eb.png" Reference="DaH5UF44uUOps46qi3sY1A/rG7Y6UUyekmJVeHgMRCu0Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 410, 64, 16" CvTextArgument="Marketing" CvType="Text" DesignTimeRectangle="1514, 398, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Marketing' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Marketing' /&gt;" Guid="a2400845-887b-409a-bf91-27dd3caa77e0" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_6" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_5" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392660702&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Fintech" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_7" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OPS'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="iTRMSpCxFEOOO6VZvk2x4w" CvTextArea="1542, 446, 45, 13" CvTextArgument="Fintech" CvType="Text" DesignTimeRectangle="1543, 443, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Fintech' tag='DIV' /&gt;" Guid="60a71613-b395-4e36-9254-9ed9b9d42745" InformativeScreenshot="e2f4a19a58130b4403532d52ea8ed587.png" Reference="DaH5UF44uUOps46qi3sY1A/1Q5sYqUfNUyZMUxR_-xKUg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 446, 45, 13" CvTextArgument="Fintech" CvType="Text" DesignTimeRectangle="1514, 434, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Fintech' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fintech' /&gt;" Guid="b944163d-9474-4fa3-b8ef-404cad00277c" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_25" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_6" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_7" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_6" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392268751&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Contábil" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2625" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,2344" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_8" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Contábil'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_43" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="9n_GxMHefEWmPQAPOdjlzw" CvTextArea="1542, 482, 53, 13" CvTextArgument="Contábil" CvType="Text" DesignTimeRectangle="1543, 479, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Contábil' tag='DIV' /&gt;" Guid="46cf35e5-99a0-42b0-b239-8de5bcb1bea0" InformativeScreenshot="c8b5eb3ad695188011f312cdb2ef23bb.png" Reference="DaH5UF44uUOps46qi3sY1A/xbMsjX-kOEytUD9QTYToyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 482, 53, 13" CvTextArgument="Contábil" CvType="Text" DesignTimeRectangle="1514, 470, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Contábil' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Contábil' /&gt;" Guid="893b21d5-fbfc-4355-858a-aa6dc004d75d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_7" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_8" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,439" sap2010:WorkflowViewState.IdRef="NetHttpRequest_7" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392130628&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_13" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556381076181&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio RH" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2186" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_9" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_30" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'RH'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_44" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="W4hqMGrJa0eiUbhXOMJbRQ" CvTextArea="1542, 518, 19, 13" CvTextArgument="RH" CvType="Text" DesignTimeRectangle="1543, 515, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='RH' tag='DIV' /&gt;" Guid="28dbe0f5-db20-430b-a6f3-23f1e4fd8740" InformativeScreenshot="468b188c00f5342d0618e35b82c129c0.png" Reference="DaH5UF44uUOps46qi3sY1A/wYFNqYC0FES-6Kqmna9_5w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 518, 19, 13" CvTextArgument="RH" CvType="Text" DesignTimeRectangle="1514, 506, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='RH' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='RH' /&gt;" Guid="8cda0639-d130-46f5-b7e5-daa1da15745e" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_32" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_8" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_9" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_8" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556393020426&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Envio Obras" AttachMode="ByInstance" DisplayName="Chrome Novo separador" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="504,2177" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" ScopeGuid="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V2">
+      <uix:NApplicationCard.AutoGenerationOptions>
+        <uix:GenerationOptions ExpectedInputs="{x:Null}" Url="{x:Null}" Prompt="Take a screenshot of the current view">
+          <uix:GenerationOptions.ExpectedOutputs>
+            <scg:List x:TypeArguments="x:String" Capacity="4">
+              <x:Null />
+            </scg:List>
+          </uix:GenerationOptions.ExpectedOutputs>
+        </uix:GenerationOptions>
+      </uix:NApplicationCard.AutoGenerationOptions>
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="470,1905" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - powerbi.com" sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_10" Url="https://app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57?experience=power-bi&amp;bookmarkGuid=1a61eabb4abb936b056d" Version="V5" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filtro off Envio'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_34" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="9pJqyrDHeUCvE6GhSs-v3g" DesignTimeRectangle="1703, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl id='bookmarkButton' tag='BUTTON' /&gt;" Guid="2a5e4eaa-8542-4673-b3b1-801f579cd926" InformativeScreenshot="652119cb62bfc863a14f2695b43f3f09.png" Reference="DaH5UF44uUOps46qi3sY1A/28K-0GQ4dUOfMVUvRUzM-A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Obras'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,227" sap2010:WorkflowViewState.IdRef="NClick_45" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" ContentHash="E-ZapumHJkC6dhzYePJfsA" CvTextArea="1542, 554, 38, 13" CvTextArgument="Obras" CvType="Text" DesignTimeRectangle="1543, 551, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Obras' tag='DIV' /&gt;" Guid="50e74dbe-41d6-404e-80d3-4bfc779dbcd1" InformativeScreenshot="24da88400a72e4c1c58c694eae0e1051.png" Reference="DaH5UF44uUOps46qi3sY1A/SWtM-bbvjkWMrNDYOvc_9A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 554, 38, 13" CvTextArgument="Obras" CvType="Text" DesignTimeRectangle="1514, 542, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Obras' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Obras' /&gt;" Guid="7a6b03e2-7b2c-490a-a697-685d2e537502" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ArrowButton'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_36" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" ContentHash="zi99Wfb8VkKDrJg4wxwAGw" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="14d8d3ca-3f20-4852-a6b6-68bae1090efc" InformativeScreenshot="06e2b9badfa5a312b1ee25a1e3cc6e52.png" Reference="DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset Position="TopLeft" X="18" Y="19" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tela inteira'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,190" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="32d51d92-2b38-43b2-a5c6-597c8254e571" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" InformativeScreenshot="1f61616c18bd457a055c5fd03a04ce21.png" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:04.5000000" sap:VirtualizedContainerService.HintSize="436,123" sap2010:WorkflowViewState.IdRef="Delay_9" />
+            <uix:NTakeScreenshot DisplayName="Take Screenshot" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="436,224" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_10" OutImage="[print]" SaveScreenshotTo="Image" Version="V5" />
+            <Assign DisplayName="Converta a imagem da captura de tela em uma string Base64." sap:VirtualizedContainerService.HintSize="436,115" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[base64String]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Convert.ToBase64String(print.ByteArray)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="HTTP Request" EnableCookies="True" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xA;{&#xA;&#x9;New FileFormDataPart(),&#xA;&#x9;New BinaryFormDataPart(),&#xA;&#x9;New TextFormDataPart()&#xA;}]" Headers="[new System.Collections.Generic.List(Of System.Collections.Generic.KeyValuePair(Of System.String, System.String)) From { New KeyValuePair(Of String, String)(&quot;apikey&quot;, &quot;T0pF4m4D3vs&quot;) }]" sap:VirtualizedContainerService.HintSize="436,432" sap2010:WorkflowViewState.IdRef="NetHttpRequest_9" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="http://192.168.99.41:8080/message/sendMedia/AvisoPBI" RetryCount="3" RetryPolicyType="Basic" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" TextPayload="[&quot;{&quot;&quot;number&quot;&quot;: &quot;&quot;556392648860&quot;&quot;, &quot;&quot;mediatype&quot;&quot;: &quot;&quot;image&quot;&quot;, &quot;&quot;media&quot;&quot;: &quot;&quot;&quot; + base64String + &quot;&quot;&quot;, &quot;&quot;mimetype&quot;&quot;: &quot;&quot;image/png&quot;&quot;, &quot;&quot;caption&quot;&quot;: &quot;&quot;*Chamados com deadline próximo ao vencimento.* ⏰ _Para garantir o cumprimento dos indicadores, fique atento e priorize a resolução dentro do prazo estabelecido_ 😉 &quot;&quot;, &quot;&quot;fileName&quot;&quot;: &quot;&quot;print.png&quot;&quot;}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="True">
+              <uwah:NetHttpRequest.TimeoutInMiliseconds>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="10000" />
+                </InArgument>
+              </uwah:NetHttpRequest.TimeoutInMiliseconds>
+            </uwah:NetHttpRequest>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Chrome" ContentHash="ngoy2DvdIEqk55Mi-eEelg" IconBase64="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" InformativeScreenshot="d693c616078cd078380cea60eaf5c244.png" Reference="DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ" Selector="&lt;html app='chrome.exe' title='Novo separador' /&gt;" Url="chrome://newtab/" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

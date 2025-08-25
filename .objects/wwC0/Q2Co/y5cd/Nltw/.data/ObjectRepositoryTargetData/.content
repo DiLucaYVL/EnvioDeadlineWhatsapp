@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="2a2Q7F3GGkCVcm0l4ESbhg" Reference="DaH5UF44uUOps46qi3sY1A/NltwjkDBKUu11ljDsUaRyQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="f619d730-01f6-4170-85b2-1301350bc26e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="345367d0-38f0-4e03-bada-bfe234890eb9" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="f21a8613-f26a-4630-b694-c4c22494363d" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="1f61616c18bd457a055c5fd03a04ce21.png" xmlns="">0eQswKlWvQ0a9SxDB8M63Tg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

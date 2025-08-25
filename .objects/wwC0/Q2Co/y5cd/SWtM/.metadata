@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Obras",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "SWtM-bbvjkWMrNDYOvc_9A",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/SWtM-bbvjkWMrNDYOvc_9A",
+  "ParentRef": "DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ",
+  "Created": "2025-08-25T15:06:35.6315493Z",
+  "Updated": "2025-08-25T15:06:35.6315493Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

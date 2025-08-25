@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="RBLvwvZUXEqH1JBqAHE1ew" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 338, 64, 12" CvTextArgument="Financeiro" CvType="Text" DesignTimeRectangle="1514, 326, 240, 36" FullSelectorArgument="&lt;webctrl aria-label='Financeiro' aria-role='listitem' tag='DIV' /&gt;" Guid="630ae8ca-7d51-4f5a-b2d6-2ba6f5bf97df" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 338, 64, 12" CvTextArgument="Financeiro" CvType="Text" DesignTimeRectangle="1543, 335, 186, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Financeiro' tag='DIV' type='' class='themeableElement textLabel trimmedTextWithEllipsis' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Financeiro' /&gt;" Guid="2817cd30-16ac-4cda-8acb-7cfea751aa2b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="871fa9f42a5932692e05904d986fda7f.png" xmlns="">0-TNVFAY5A0S-FEIhcpx4IA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

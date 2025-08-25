@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="W4hqMGrJa0eiUbhXOMJbRQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 518, 19, 13" CvTextArgument="RH" CvType="Text" DesignTimeRectangle="1543, 515, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='RH' tag='DIV' /&gt;" Guid="28dbe0f5-db20-430b-a6f3-23f1e4fd8740" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 518, 19, 13" CvTextArgument="RH" CvType="Text" DesignTimeRectangle="1514, 506, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='RH' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='RH' /&gt;" Guid="8cda0639-d130-46f5-b7e5-daa1da15745e" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="468b188c00f5342d0618e35b82c129c0.png" xmlns="">0bgYpZi0330S2d4YQIu0wSw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

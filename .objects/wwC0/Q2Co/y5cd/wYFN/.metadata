@@ -1,0 +1,14 @@
+﻿{
+  "Name": "RH",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "wYFNqYC0FES-6Kqmna9_5w",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/wYFNqYC0FES-6Kqmna9_5w",
+  "ParentRef": "DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ",
+  "Created": "2025-08-25T15:06:07.2478069Z",
+  "Updated": "2025-08-25T15:06:07.2478069Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

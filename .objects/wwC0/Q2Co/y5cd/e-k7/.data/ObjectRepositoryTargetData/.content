@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="cb7QvJrtekSbi42ylTXyYw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" DesignTimeRectangle="1755, 177, 52, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aria-label='Exibição' tag='BUTTON' /&gt;" Guid="21325de1-c371-434f-b13f-718f67ecdff8" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b914fbaa28a1f02ab3f1435dc0d32f11.png" xmlns="">03qxjuwlaX0a3hAerx_iogA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

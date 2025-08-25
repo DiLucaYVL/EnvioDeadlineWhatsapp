@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="O-IHs_jl10qzReG1GJ8Lrg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="9a5a3922-0ee4-4a41-b652-1aa51efeba7d" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1528, 220, 278, 36" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='mat-menu-panel-6' tag='BUTTON' type='' class='mat-mdc-menu-item mat-mdc-focus-indicator appBarMatMenu ng-tns-c1967311527-9' aaname='Abrir no modo de tela inteira' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Tela inteira' /&gt;" Guid="a6170e0b-2c4c-414d-b5ca-1e67aabcd4e1" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9a5a3922-0ee4-4a41-b652-1aa51efeba7d" CvTextArea="1558, 230, 68, 13" CvTextArgument="Tela inteira" CvType="Text" DesignTimeRectangle="1560, 230, 74, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Tela inteira' parentid='mat-menu-panel-6' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Tela inteira' /&gt;" Guid="7b511b51-6c5c-4029-aeb0-ea6d6ce4ceda" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9f2f401e813d67a7c4c981ddc51d140b.png" xmlns="">0hP5Kq1dXIUqnogeVd8F1NQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

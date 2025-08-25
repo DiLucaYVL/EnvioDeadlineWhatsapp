@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="iTRMSpCxFEOOO6VZvk2x4w" Reference="DaH5UF44uUOps46qi3sY1A/1Q5sYqUfNUyZMUxR_-xKUg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/groups/398195bb-da70-4d7c-86f4-19b9601723a9/reports/8b79150b-8386-46c5-8f96-f356e9c82e40/0d55537a3136c1068b57" CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 446, 45, 13" CvTextArgument="Fintech" CvType="Text" DesignTimeRectangle="1543, 443, 186, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Fintech' tag='DIV' /&gt;" Guid="60a71613-b395-4e36-9254-9ed9b9d42745" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CHAMADOS ATRASADOS - Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="08b675c2-14c4-490e-b254-5093ef2d9392" CvTextArea="1542, 446, 45, 13" CvTextArgument="Fintech" CvType="Text" DesignTimeRectangle="1514, 434, 240, 36" FuzzySelectorArgument="&lt;webctrl aria-label='Fintech' aria-role='listitem' tag='DIV' type='' class='dropzone bookmark themeableElement ui-draggable ui-draggable-handle ui-draggable-disabled droppableElement ui-droppable' aaname='' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fintech' /&gt;" Guid="b944163d-9474-4fa3-b8ef-404cad00277c" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="e2f4a19a58130b4403532d52ea8ed587.png" xmlns="">0hr1oU11IhU2Fce5szreQdA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

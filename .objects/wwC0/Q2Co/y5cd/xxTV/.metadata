@@ -1,0 +1,14 @@
+﻿{
+  "Name": "ArrowButton",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "xxTVwB8QaESd2gYvpDByQQ",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/xxTVwB8QaESd2gYvpDByQQ",
+  "ParentRef": "DaH5UF44uUOps46qi3sY1A/y5cdbX4y9E22l3ZZgLlkfQ",
+  "Created": "2025-08-25T13:54:55.6582383Z",
+  "Updated": "2025-08-25T13:54:55.6582383Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
