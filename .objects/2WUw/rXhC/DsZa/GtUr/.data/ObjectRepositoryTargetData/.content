@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="K3B9fRRZ1UqJqx6vFpxbaQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="app.powerbi.com/home" CVScreenId="4ee151a4-9883-4411-a376-c89d4d324a2e" CvTextArea="207, 146, 81, 16" CvTextArgument="Página Inicial" CvType="Text" DesignTimeRectangle="208, 141, 80, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Página Inicial' tag='SPAN' /&gt;" Guid="f976bb86-a456-48e2-ac81-ba03e9fddec9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Power BI' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="4ee151a4-9883-4411-a376-c89d4d324a2e" CvTextArea="130, 146, 65, 14" CvTextArgument="Power BI" CvType="Text" DesignTimeRectangle="131, 142, 64, 21" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='product-name ng-star-inserted' aaname='Power BI' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Power BI' /&gt;" Guid="72bf56df-fc46-4220-ace4-367d2ff9690b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a9b56830910d3a00186e1a389c17f612.png" xmlns="">07wEqyhwfikOgDfda0FDybQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "registrobr@grupotopfama…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "R9ivkxy1w0aAW8j5BH4oNg",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/R9ivkxy1w0aAW8j5BH4oNg",
+  "ParentRef": "DaH5UF44uUOps46qi3sY1A/DsZaVYT46k6yGxlIedD3Ew",
+  "Created": "2025-08-25T18:26:27.1124921Z",
+  "Updated": "2025-08-25T18:26:27.1124921Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

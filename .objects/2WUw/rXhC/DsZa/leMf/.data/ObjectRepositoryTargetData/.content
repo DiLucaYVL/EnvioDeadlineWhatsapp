@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="r80twuo9GkOKYto_XLSI4A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="login.microsoftonline.com/common/oauth2/v2.0/authorize" CVScreenId="2139fcc0-cf2c-4549-a661-8cd4a934c6b2" CvElementArea="1034, 650, 111, 35" CvTextArea="1061, 661, 57, 18" CvTextArgument="Avançar" CvType="Button" DesignTimeRectangle="1036, 652, 108, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl id='idSIButton9' tag='INPUT' /&gt;" Guid="e793d3c0-273e-4ae4-adcb-d06dc123969b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Entrar em sua conta' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="2139fcc0-cf2c-4549-a661-8cd4a934c6b2" CvTextArea="791, 483, 68, 20" CvTextArgument="Entrar" CvType="Text" DesignTimeRectangle="792, 478, 352, 28" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-role='heading' tag='DIV' type='' class='' aaname='Entrar' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Entrar' /&gt;" Guid="52684902-3165-477a-bac1-672049d388f2" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="ee67cdf02b1b26611938c915f4be6423.png" xmlns="">0CqId5q7fEEC0tytVx0WrxA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

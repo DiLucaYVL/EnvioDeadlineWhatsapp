@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JTZcd0Vc-kWt373af3KSSg" Reference="DaH5UF44uUOps46qi3sY1A/R9ivkxy1w0aAW8j5BH4oNg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="login.microsoftonline.com/common/oauth2/v2.0/authorize" CVScreenId="473e44b9-a140-418e-85ee-e2badd67e71f" CvTextArea="850, 555, 227, 17" CvTextArgument="registrobr@grupotopfama.com.br" CvType="Text" DesignTimeRectangle="748, 526, 440, 72" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='DIV' type='' class='table' aaname='              ' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='registrobr@grupotopfama.com.br' /&gt;" Guid="2a048b7d-ccf0-4551-877b-28781b47242a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Entrar em sua conta' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="792, 538, 48, 48" ElementType="Icon" FullSelectorArgument="&lt;webctrl aria-role='presentation' tag='IMG' /&gt;" Guid="d916da20-1deb-42cf-9ac1-79a4f0348efe" SearchSteps="Selector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="54f35084a651bbc004fdc5ff496d10b8.png" xmlns="">06m_roB_YikiZXUOOP2RhPg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome Entrar em sua conta",
+  "Type": "App",
+  "Id": "MUgkyqTqxEOx8kIV1pADiQ",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/MUgkyqTqxEOx8kIV1pADiQ",
+  "Created": "2025-08-25T18:49:32.0204568Z",
+  "Updated": "2025-08-25T18:49:32.0204568Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

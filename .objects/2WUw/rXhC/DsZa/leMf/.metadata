@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Avançar",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "leMfkxvX7keG0iR-tKw-mA",
+  "Reference": "DaH5UF44uUOps46qi3sY1A/leMfkxvX7keG0iR-tKw-mA",
+  "ParentRef": "DaH5UF44uUOps46qi3sY1A/DsZaVYT46k6yGxlIedD3Ew",
+  "Created": "2025-08-25T18:45:28.3013925Z",
+  "Updated": "2025-08-25T18:45:28.3013925Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

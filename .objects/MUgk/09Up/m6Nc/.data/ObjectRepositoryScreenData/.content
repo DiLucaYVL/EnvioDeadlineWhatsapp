@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="5Vl_2e4RIUGJ0AbpaIQ3uw" Reference="DaH5UF44uUOps46qi3sY1A/m6NcjtKcDUi2DDvTrMiCgA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="WeCHz71dl0aguAuP2sq84w" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABiSURBVDhP7cyxDYBADENRT8JIrMQytwQsRUmZM5bcOdU1FFj6VfSCZ9+qC9xxobre+//gEw/WN+5q4+pEdclH6LgEnXyEjkvQyUfouASdfISOS9DJR+i4BJ18hI5L0MmvDZhNnuSD8tzgJQAAAABJRU5ErkJggg==" Reference="DaH5UF44uUOps46qi3sY1A/m6NcjtKcDUi2DDvTrMiCgA" Selector="&lt;html app='chrome.exe' url='https://app.powerbi.com/home?language=pt-BR' /&gt;" Url="https://app.powerbi.com/home?language=pt-BR" Version="V2">
+      <imageRef attrName="InformativeScreenshot" originalValue="1ef5109bbc399e120d3b6ee636708d4e.jpg" xmlns="">0woK0DX226ECwQPKJAHVKgA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
